@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapur Mandiri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans">
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-extrabold text-slate-900 flex items-center gap-2">
+                <i class="fa-solid fa-utensils text-[#f97316]"></i> Dapur Mandiri
+            </a>
+            
+            <button onclick="toggleCartDrawer()" class="relative p-2 text-slate-700 hover:text-slate-900">
+                <i class="fa-solid fa-cart-shopping text-xl"></i>
+                <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-[#f97316] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-12 px-4 text-center relative overflow-hidden">
+        <div class="max-w-3xl mx-auto space-y-4 relative z-10">
+            <span class="bg-[#f97316]/20 text-[#f97316] px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">Kuliner Terbaik</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Dapur Mandiri</h1>
+            <p class="text-slate-300 text-sm md:text-base">Kelezatan Autentik Resep Warisan Keluarga</p>
+            <a href="#menu" class="inline-block bg-[#f97316] hover:opacity-90 text-white font-bold px-6 py-3 rounded-full text-sm shadow-lg transition">Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Menu Grid Section -->
+    <section id="menu" class="max-w-6xl mx-auto px-4 py-10">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Menu Pilihan Kami</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-md border border-slate-100 overflow-hidden transition flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=500&q=80" alt="Nasi Goreng Spesial" class="w-full h-48 object-cover">
+                    <div class="p-4 space-y-2">
+                        <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Makanan Utama</span>
+                        <h3 class="font-bold text-slate-800 text-lg">Nasi Goreng Spesial</h3>
+                        <p class="text-slate-500 text-xs">Dengan telor ceplok, ayam suwir & kerupuk</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0 flex justify-between items-center border-t border-slate-50 mt-2">
+                    <span class="font-extrabold text-slate-900 text-base">Rp 25.000</span>
+                    <button onclick="addToCart(1)" class="bg-[#f97316] text-white px-3 py-1.5 rounded-lg text-xs font-semibold hover:opacity-90 transition flex items-center gap-1">
+                        <i class="fa-solid fa-plus"></i> Tambah
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-md border border-slate-100 overflow-hidden transition flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500&q=80" alt="Ayam Bakar Madu" class="w-full h-48 object-cover">
+                    <div class="p-4 space-y-2">
+                        <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Makanan Utama</span>
+                        <h3 class="font-bold text-slate-800 text-lg">Ayam Bakar Madu</h3>
+                        <p class="text-slate-500 text-xs">Ayam kampung bakar empuk bumbu madu</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0 flex justify-between items-center border-t border-slate-50 mt-2">
+                    <span class="font-extrabold text-slate-900 text-base">Rp 30.000</span>
+                    <button onclick="addToCart(2)" class="bg-[#f97316] text-white px-3 py-1.5 rounded-lg text-xs font-semibold hover:opacity-90 transition flex items-center gap-1">
+                        <i class="fa-solid fa-plus"></i> Tambah
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-md border border-slate-100 overflow-hidden transition flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1529563021893-cc83c992d75d?w=500&q=80" alt="Sate Ayam Madura" class="w-full h-48 object-cover">
+                    <div class="p-4 space-y-2">
+                        <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Makanan Utama</span>
+                        <h3 class="font-bold text-slate-800 text-lg">Sate Ayam Madura</h3>
+                        <p class="text-slate-500 text-xs">10 tusuk sate ayam daging tebal bumbu kacang</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0 flex justify-between items-center border-t border-slate-50 mt-2">
+                    <span class="font-extrabold text-slate-900 text-base">Rp 28.000</span>
+                    <button onclick="addToCart(3)" class="bg-[#f97316] text-white px-3 py-1.5 rounded-lg text-xs font-semibold hover:opacity-90 transition flex items-center gap-1">
+                        <i class="fa-solid fa-plus"></i> Tambah
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-md border border-slate-100 overflow-hidden transition flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&q=80" alt="Es Teh Manis Jumbo" class="w-full h-48 object-cover">
+                    <div class="p-4 space-y-2">
+                        <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Minuman</span>
+                        <h3 class="font-bold text-slate-800 text-lg">Es Teh Manis Jumbo</h3>
+                        <p class="text-slate-500 text-xs">Teh melati segar rasa mantap</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0 flex justify-between items-center border-t border-slate-50 mt-2">
+                    <span class="font-extrabold text-slate-900 text-base">Rp 3.000</span>
+                    <button onclick="addToCart(4)" class="bg-[#f97316] text-white px-3 py-1.5 rounded-lg text-xs font-semibold hover:opacity-90 transition flex items-center gap-1">
+                        <i class="fa-solid fa-plus"></i> Tambah
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-md border border-slate-100 overflow-hidden transition flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500&q=80" alt="Es Jeruk Peras" class="w-full h-48 object-cover">
+                    <div class="p-4 space-y-2">
+                        <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Minuman</span>
+                        <h3 class="font-bold text-slate-800 text-lg">Es Jeruk Peras</h3>
+                        <p class="text-slate-500 text-xs">Jeruk peras murni kaya vitamin C</p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0 flex justify-between items-center border-t border-slate-50 mt-2">
+                    <span class="font-extrabold text-slate-900 text-base">Rp 8.000</span>
+                    <button onclick="addToCart(5)" class="bg-[#f97316] text-white px-3 py-1.5 rounded-lg text-xs font-semibold hover:opacity-90 transition flex items-center gap-1">
+                        <i class="fa-solid fa-plus"></i> Tambah
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Cart Drawer Modal -->
+    <div id="cart-drawer" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex justify-end">
+        <div class="bg-white w-full max-w-md h-full flex flex-col justify-between shadow-2xl">
+            <div class="p-4 border-b border-slate-100 flex justify-between items-center">
+                <h3 class="font-bold text-slate-800 text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-[#f97316]"></i> Keranjang Pesanan
+                </h3>
+                <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-slate-600 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div id="cart-items" class="p-4 flex-1 overflow-y-auto space-y-3">
+                <p class="text-center text-slate-400 text-sm py-8">Keranjang belanjaan masih kosong.</p>
+            </div>
+
+            <div class="p-4 border-t border-slate-100 space-y-3 bg-slate-50">
+                <div class="flex justify-between text-slate-800 font-bold text-base">
+                    <span>Total Pembayaran:</span>
+                    <span id="cart-total">Rp 0</span>
+                </div>
+
+                <div class="space-y-2">
+                    <input type="text" id="cust-name" placeholder="Nama Lengkap Pemesan" class="w-full border border-slate-200 rounded-lg px-3 py-2 text-xs focus:outline-none">
+                    <textarea id="cust-address" placeholder="Alamat Pengiriman Lengkap" class="w-full border border-slate-200 rounded-lg px-3 py-2 text-xs focus:outline-none" rows="2"></textarea>
+                </div>
+
+                <button onclick="checkoutToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-sm shadow-md transition flex justify-center items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Kirim Pesanan via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
